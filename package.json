@@ -1,0 +1,18 @@
+{
+  "name": "sushi-clinic-restaurant-manager",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Restaurant reservations, guestbook, floor management, servers and events",
+  "engines": {"node": ">=24 <25"},
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/main.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node --env-file-if-exists=.env scripts/dev.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "backup": "node --env-file-if-exists=.env scripts/backup.mjs"
+  },
+  "dependencies": {"react": "19.2.0", "react-dom": "19.2.0"},
+  "devDependencies": {"esbuild": "0.25.12", "jsdom": "26.1.0"}
+}

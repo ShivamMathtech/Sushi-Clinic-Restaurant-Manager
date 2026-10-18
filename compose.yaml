@@ -1,0 +1,14 @@
+services:
+  sushi-clinic:
+    build: .
+    ports:
+      - "127.0.0.1:3040:3040"
+    environment:
+      SEED_DEMO: "true"
+    volumes:
+      - restaurant_data:/app/data
+      - restaurant_backups:/app/backups
+    restart: unless-stopped
+volumes:
+  restaurant_data:
+  restaurant_backups:

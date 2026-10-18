@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/*
+!data/.gitkeep
+backups/
+coverage/
+tests/.compiled/
+*.log
+.DS_Store

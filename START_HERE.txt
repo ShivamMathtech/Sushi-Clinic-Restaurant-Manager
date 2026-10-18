@@ -1,0 +1,81 @@
+SUSHI CLINIC - COMPLETE RESTAURANT MANAGEMENT APPLICATION
+Version 1.0.0 | Prepared for Shivam Singh
+
+QUICK START - WINDOWS 10 / 11
+
+1. Extract the ZIP completely. Do not run scripts from inside the ZIP viewer.
+2. Install Node.js 24 LTS (64-bit) from https://nodejs.org
+3. Open the extracted sushi-clinic folder.
+4. Double-click START_WINDOWS.bat.
+5. Your browser opens http://localhost:3040
+   Keep the terminal window open while using the app.
+
+The compiled React frontend is already included. You do not need npm install,
+Python, MongoDB, an API key, or a cloud account just to run this application.
+After Node.js is installed, normal local use does not require internet access.
+
+LOCAL DEMO ACCOUNTS
+
+Administrator
+  Email:    admin@sushiclinic.local
+  Password: SushiAdmin!2026
+
+Front-desk host
+  Email:    host@sushiclinic.local
+  Password: SushiHost!2026
+
+These are demonstration credentials. Change passwords from the profile icon
+before storing real guest data. Sample guests, reservations, and events are
+fictional demonstration records, seeded once around your first launch date.
+
+WHAT IS INCLUDED
+
+- React interface based on the supplied restaurant dashboard reference
+- Node.js HTTP API and persistent SQLite database
+- Calendar and list reservations, waitlist, walk-ins and quick seating
+- Guest profiles, VIP flags, allergies, preferences and visit history
+- Table sections, capacity, server assignment and scheduled table blocks
+- Servers, daily workload, table assignments and reservation history
+- Events with month, week and day calendar views
+- CSV reports, JSON export and full database backup script
+- Admin and host access, password changes and admin account management
+- Windows scripts, Linux/macOS launcher, Docker configuration and tests
+
+FIRST WORKFLOW TO TRY
+
+1. Log in as administrator.
+2. Click the blue + in the upper-right corner.
+3. Choose an existing guest, or click New guest.
+4. Choose date, start time, covers and duration.
+5. Select an available table and click Create reservation.
+6. Open the booking card: mark arrived, seat the guest, complete the visit.
+7. Open Guestbook to see the completed visit in their history.
+
+YOUR DATA
+
+Data is saved in data/sushi-clinic.sqlite, next to the source code.
+Closing the terminal and restarting does not erase it.
+Run BACKUP_WINDOWS.bat to create a consistent backup in backups/.
+
+DEVELOPMENT
+
+Double-click SETUP_DEVELOPMENT_WINDOWS.bat, or run:
+  npm ci
+  npm run build
+  npm test
+  npm run dev
+
+During development, refresh the browser after frontend edits. Restart the
+server after backend edits. Run npm run build before redistributing the app.
+
+IF IT DOES NOT OPEN
+
+- Run node --version in a new terminal. Use version 24.x.
+- Open http://localhost:3040 manually.
+- If the port is occupied, copy .env.example to .env, set PORT=3041, restart,
+  and open http://localhost:3041.
+- If you see 'Failed to fetch', start START_WINDOWS.bat and keep it running.
+- Read any error in the terminal. More help: docs/OPERATIONS.md.
+
+See README.md for features and limitations, docs/API.md for endpoint examples,
+and docs/TEST_REPORT.md for the actual verification results.
