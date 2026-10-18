@@ -1,0 +1,11 @@
+import {context} from 'esbuild';
+import {mkdir,copyFile} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+await mkdir(resolve(root,'dist'),{recursive:true});
+for(const file of ['index.html','favicon.svg'])await copyFile(resolve(root,'frontend',file),resolve(root,'dist',file));
+const ctx=await context({entryPoints:[resolve(root,'frontend/main.jsx')],outfile:resolve(root,'dist/app.js'),bundle:true,sourcemap:true,target:['es2022'],format:'esm',jsx:'automatic',define:{'process.env.NODE_ENV':'"development"'},logLevel:'info'});
+await ctx.rebuild();await ctx.watch();
+await import('../server/main.mjs');
+console.log('Watching frontend source. Refresh the browser after editing. Restart for backend changes.');
